@@ -9,10 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Compute next SemVer tag
         id: semver
         uses: rafaelcalleja/dind-buster@v0.1.8
-        with:
-          args:
-            - make
-            - next-version
+        run: make next-version
+          
