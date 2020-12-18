@@ -8,12 +8,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: docker://rafaelcalleja/dind-buster:v0.1.8
+      options: --privileged
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Compute next SemVer tag
         id: semver
-        uses: docker://rafaelcalleja/dind-buster:v0.1.8
-        options: --privileged
-        with:
-          args: make next-version
+        run: make next-version
