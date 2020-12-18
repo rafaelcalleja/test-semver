@@ -19,7 +19,7 @@ jobs:
       - name: Compute next SemVer tag
         id: release
         run: |
-          export VERSION=$(make next-version)
+          export VERSION=$(docker run --rm alpine/semver semver -c -i patch $(cat VERSION))
           echo $VERSION > VERSION
           echo ::debug ::relase version ${VERSION}
           echo ::set-output name=tag_name::${VERSION}
