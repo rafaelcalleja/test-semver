@@ -21,6 +21,7 @@ jobs:
         run: |
           make next-version > VERSION
           export VERSION=$(cat VERSION)
+          echo ::debug ::relase version ${VERSION}
           echo ::set-output name=tag_name::${VERSION}
       - name: Check Output Parameters
         run: |
