@@ -38,3 +38,10 @@ jobs:
             - Second Change
           draft: false
           prerelease: false
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v5
+        with:
+          author_name: Github Action
+          author_email: rafaelcalleja@gmail.com
+          message: 'bump version'
+          add: 'VERSION'
