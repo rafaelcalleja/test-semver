@@ -15,4 +15,4 @@ jobs:
         id: semver
         uses: rafaelcalleja/dind-buster@v0.1.8
         with:
-          args: ["make", "next-version"]
+          args: make next-version
