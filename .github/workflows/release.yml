@@ -19,8 +19,8 @@ jobs:
       - name: Compute next SemVer tag
         id: release
         run: |
-          make next-version > VERSION
           export VERSION=$(cat VERSION)
+          make next-version > VERSION
           echo ::debug ::relase version ${VERSION}
           echo ::set-output name=tag_name::${VERSION}
       - name: Check Output Parameters
