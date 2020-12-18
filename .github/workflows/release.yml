@@ -14,5 +14,5 @@ jobs:
       - name: Compute next SemVer tag
         id: semver
         uses: rafaelcalleja/dind-buster@v0.1.8
-        run: make next-version
-          
+        with:
+          args: ["make", "next-version"]
