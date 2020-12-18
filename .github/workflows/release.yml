@@ -14,5 +14,6 @@ jobs:
       - name: Compute next SemVer tag
         id: semver
         uses: docker://rafaelcalleja/dind-buster:v0.1.8
+        options: --privileged
         with:
           args: make next-version
